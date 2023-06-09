@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HomeContainer } from './Home.styled';
 
 const Home = ({TrendingMovies,setTrendingMovies}) => {
   
   useEffect(() => {
+    
     const options = {
       method: 'GET',
       headers: {
@@ -22,13 +24,16 @@ const Home = ({TrendingMovies,setTrendingMovies}) => {
 
       .catch(err => console.error(err));
   });
+
+
+  
   return (
-    <>
+    <HomeContainer>
       <h2>Home</h2>
       <ul>
         {TrendingMovies.map(TrendMovie => {
           return (
-            <li>
+            <li key={TrendMovie.id}>
               <Link to={`/movies/${TrendMovie.id}`}>
                 {TrendMovie.original_title}
               </Link>
@@ -36,10 +41,8 @@ const Home = ({TrendingMovies,setTrendingMovies}) => {
           );
         })}
       </ul>
-      <Link to="/movies/:movieId/cast">TrendingMovie 1</Link>
-      <Link to="/movies/:movieId/cast">TrendingMovie 2</Link>
-      <Link to="/movies/:movieId/cast">TrendingMovie 3</Link>
-    </>
+      
+    </HomeContainer>
   );
 };
 export default Home;

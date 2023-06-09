@@ -1,14 +1,12 @@
-import Cast from "pages/Cast";
-import Home from "pages/Home";
-import MovieDetails from "pages/MovieDetails";
-import Movies from "pages/Movies";
+import Cast from "pages/Cast/Cast";
+import Home from "pages/Home/Home";
+import MovieDetails from "pages/MovieDetails/MovieDetails";
+import Movies from "pages/Movies/Movies";
 import Review from "pages/Review";
 import {Routes, Route} from "react-router-dom"
-import SharedLayout from "./SharedLayout";
+import SharedLayout from "./SharedLayout/SharedLayout";
 import { useState } from "react";
-
-
-const TOKKEN ="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZmUxNDAwMDM2NTQ5MGJhZWI0OTQ4ZDI1NTM3MGU0NyIsInN1YiI6IjY0MmUwZDc5YTZhNGMxMDBiNmQ1YmQ1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fhcyRsSpqxcScTx3k8UCgqBl4PFNCmjnjrGZc5gvKXU";
+import Homy from "pages/Homy";
 
 export const App = () => {
   const [TrendingMovies, setTrendingMovies] = useState([]);
@@ -16,6 +14,7 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Homy/>}/> 
           <Route path="/trending/get-trending" element={<Home TrendingMovies={TrendingMovies} setTrendingMovies={setTrendingMovies}/>} />
           <Route path="/movies" element={<Movies />}/>
           <Route path="/movies/:movieId" element={<MovieDetails TrendingMovies={TrendingMovies}/>}>
@@ -27,7 +26,7 @@ export const App = () => {
           <Route path="*" element={<Home/>} />
         </Route>    
       </Routes>
-    <h1>Buscamos en la API</h1>
+    
     </div>
   );
 };
