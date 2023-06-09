@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'servicesAPI/APImovies';
 import { useState, useEffect } from 'react';
+import { ContainerReviews, Containerli } from './Review.styled';
 
 const Review = () => {
   const [data, setData] = useState('');
@@ -25,18 +26,23 @@ useEffect(()=>{
   return (
     
     <>
-    <h2>Review</h2>
+    
     {loading?(<h3>Loading Reviews</h3>): 
     (
-        data.results.map((review)=>{
-            return(
-                <li key={review.id}>
-                 <p>{review.author}</p>
-                <p>{review.content}</p>
-                </li>
-               
-            )
-        })
+      <ContainerReviews>
+{
+        data.results.length>0?(data.results.map((review)=>{
+          return(
+              <Containerli key={review.id}>
+                <h4>Autor: {review.author}</h4>
+              <p>{review.content}</p>
+              </Containerli>
+             
+          )
+      })):(<h2>We don´t have any reviews for this movie.</h2>)
+        
+}
+      </ContainerReviews>
     )
             
            

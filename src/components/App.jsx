@@ -2,7 +2,7 @@ import Cast from "pages/Cast/Cast";
 import Home from "pages/Home/Home";
 import MovieDetails from "pages/MovieDetails/MovieDetails";
 import Movies from "pages/Movies/Movies";
-import Review from "pages/Review";
+import Review from "pages/Review/Review";
 import {Routes, Route} from "react-router-dom"
 import SharedLayout from "./SharedLayout/SharedLayout";
 import { useState } from "react";

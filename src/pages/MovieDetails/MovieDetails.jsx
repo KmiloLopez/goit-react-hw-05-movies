@@ -79,12 +79,12 @@ const MovieDetails = () => {
       <ContainerBottom>
                 
                   <li>
-                    <Link to="cast" state={{ from: cameBack }}>
+                    <Link style={{fontSize:20}} to="cast" state={{ from: cameBack }}>
                       Cast
                     </Link>
                   </li>
                   <li>
-                    <Link to="reviews" state={{ from: cameBack }}>
+                    <Link style={{fontSize:20}} to="reviews" state={{ from: cameBack }}>
                       Reviews
                     </Link>
                   </li>
