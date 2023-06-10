@@ -23,7 +23,7 @@ const Cast = () => {
     getMovieCast();
   }, [movieId]);
 
-  console.log('data en CAST', data);
+  
   return (
     <CastList loading={loading} data={data}/>
     

@@ -8,7 +8,7 @@ const Review = () => {
   const [data, setData] = useState('');
   const { movieId } = useParams();
   const [loading, setLoading] = useState(true);
-  console.log('movieID en REVIEWS', movieId);
+  
 useEffect(()=>{
 
     const getReviews = async () => {

@@ -16,7 +16,7 @@ const Movies = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const { elements } = e.target;
-    console.log('elements', elements.search.value);
+  
     setWaitingInput(false);
     const getData = async () => {
       try {
@@ -34,7 +34,7 @@ const Movies = () => {
 
   return (
     <MoviesContainer>
-      {console.log('data from Movies page', data)}
+      
       <h2>Movies</h2>
       <form onSubmit={handleSubmit}>
         <input

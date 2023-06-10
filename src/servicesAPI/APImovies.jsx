@@ -16,7 +16,7 @@ export async function fetchMovieDetails(id) {
 
   export async function fetchSearchMovie(SearchInput) {
     const query = `/search/movie?query=${SearchInput}`;
-    console.log("searchInput",SearchInput)
+    
     try {
       const data = await fetch(
         `
