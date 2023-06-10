@@ -9,7 +9,7 @@ const Movies = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [waitingInput, setWaitingInput] = useState(true);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams("");
   const search = useMemo(() => searchParams.get('search'), [searchParams]);
   const location = useLocation();
 
