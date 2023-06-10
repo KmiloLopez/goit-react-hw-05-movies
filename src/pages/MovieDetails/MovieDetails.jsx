@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { fetchMovieDetails } from '../../servicesAPI/APImovies';
 import { Container, ContainerBottom, Containerright, Containertop, GoBackButton } from './MovieDetails.styled';
 
+import Loader from 'components/Loader/Loader';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [data, setData] = useState(null);
@@ -42,7 +43,8 @@ const MovieDetails = () => {
       </GoBackButton>
       <Containertop>
         {loading ? (
-          <h2>'Loading...'</h2>
+           <Loader/> 
+          
         ) : (
           <div>
             {data.poster_path ? (
@@ -57,7 +59,7 @@ const MovieDetails = () => {
         )}
         <Containerright>
           {loading ? (
-            <h2>'Loading...'</h2>
+            <Loader/>
           ) : (
             <div>
               <div>

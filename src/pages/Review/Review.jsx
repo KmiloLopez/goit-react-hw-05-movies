@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'servicesAPI/APImovies';
 import { useState, useEffect } from 'react';
 import { ContainerReviews, Containerli } from './Review.styled';
+import Loader from 'components/Loader';
 
 const Review = () => {
   const [data, setData] = useState('');
@@ -27,7 +28,7 @@ useEffect(()=>{
     
     <>
     
-    {loading?(<h3>Loading Reviews</h3>): 
+    {loading?(<Loader/>): 
     (
       <ContainerReviews>
 {
